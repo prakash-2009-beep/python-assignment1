@@ -1,104 +1,171 @@
 ```javascript
-// ==============================
-// SCROLL REVEAL ANIMATION
-// ==============================
+// =====================================
+// 1. SCROLL REVEAL ANIMATIONS
+// =====================================
 
 const revealElements = document.querySelectorAll(".reveal");
 
-const observer = new IntersectionObserver(
+if ("IntersectionObserver" in window) {
 
-    (entries) => {
+    const revealObserver = new IntersectionObserver(
 
-        entries.forEach((entry) => {
+        (entries, observer) => {
 
-            if (entry.isIntersecting) {
+            entries.forEach((entry) => {
 
-                entry.target.classList.add("show");
+                if (entry.isIntersecting) {
 
-                observer.unobserve(entry.target);
+                    entry.target.classList.add("visible");
 
-            }
+                    observer.unobserve(entry.target);
 
-        });
+                }
 
-    },
+            });
 
-    {
-        threshold: 0.15
-    }
+        },
 
-);
+        {
+            threshold: 0.12
+        }
 
-revealElements.forEach((element) => {
+    );
 
-    observer.observe(element);
+    revealElements.forEach((element) => {
+
+        revealObserver.observe(element);
+
+    });
+
+} else {
+
+    revealElements.forEach((element) => {
+
+        element.classList.add("visible");
+
+    });
+
+}
+
+
+// =====================================
+// 2. MOBILE NAVIGATION
+// =====================================
+
+const menuToggle = document.getElementById("menu-toggle");
+
+const navLinksContainer = document.getElementById("nav-links");
+
+const menuIcon = menuToggle.querySelector("i");
+
+
+function closeMenu() {
+
+    navLinksContainer.classList.remove("open");
+
+    menuToggle.setAttribute("aria-expanded", "false");
+
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+
+    menuIcon.classList.remove("fa-xmark");
+
+    menuIcon.classList.add("fa-bars");
+
+}
+
+
+menuToggle.addEventListener("click", () => {
+
+    const isOpen = navLinksContainer.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+    menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+    );
+
+    menuIcon.classList.toggle("fa-bars", !isOpen);
+
+    menuIcon.classList.toggle("fa-xmark", isOpen);
 
 });
 
 
-// ==============================
-// MOBILE NAVIGATION
-// ==============================
+// Close menu when a navigation link is clicked
 
-const menuBtn = document.getElementById("menu-btn");
-
-const navMenu = document.getElementById("nav-menu");
-
-menuBtn.addEventListener("click", () => {
-
-    navMenu.classList.toggle("show");
-
-    const icon = menuBtn.querySelector("i");
-
-    if (navMenu.classList.contains("show")) {
-
-        icon.classList.replace("fa-bars", "fa-xmark");
-
-    } else {
-
-        icon.classList.replace("fa-xmark", "fa-bars");
-
-    }
-
-});
-
-
-// CLOSE MENU AFTER CLICKING A LINK
-
-const navLinks = document.querySelectorAll("#nav-menu a");
+const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
 
     link.addEventListener("click", () => {
 
-        navMenu.classList.remove("show");
-
-        const icon = menuBtn.querySelector("i");
-
-        icon.classList.replace("fa-xmark", "fa-bars");
+        closeMenu();
 
     });
 
 });
 
 
-// ==============================
-// ACTIVE NAVIGATION LINK
-// ==============================
+// Close menu when clicking outside
 
-const sections = document.querySelectorAll("section[id]");
+document.addEventListener("click", (event) => {
 
-window.addEventListener("scroll", () => {
+    const clickedInsideNavbar = event.target.closest(".navbar");
 
-    let current = "";
+    if (!clickedInsideNavbar) {
 
-    sections.forEach((section) => {
+        closeMenu();
 
-        const sectionTop = section.offsetTop - 150;
+    }
 
-        if (window.scrollY >= sectionTop) {
+});
 
-            current = section.getAttribute("id");
+
+// =====================================
+// 3. NAVBAR SCROLL EFFECT
+// =====================================
+
+const navbar = document.querySelector(".navbar");
+
+function updateNavbar() {
+
+    if (window.scrollY > 40) {
+
+        navbar.classList.add("scrolled");
+
+    } else {
+
+        navbar.classList.remove("scrolled");
+
+    }
+
+}
+
+window.addEventListener("scroll", updateNavbar, {
+    passive: true
+});
+
+updateNavbar();
+
+
+// =====================================
+// 4. ACTIVE NAVIGATION LINK
+// =====================================
+
+const pageSections = document.querySelectorAll("main section[id]");
+
+function updateActiveLink() {
+
+    let currentSection = "home";
+
+    pageSections.forEach((section) => {
+
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop <= 180) {
+
+            currentSection = section.id;
 
         }
 
@@ -106,36 +173,63 @@ window.addEventListener("scroll", () => {
 
     navLinks.forEach((link) => {
 
-        link.classList.remove("active");
+        const target = link.getAttribute("href");
 
-        if (link.getAttribute("href") === "#" + current) {
-
-            link.classList.add("active");
-
-        }
+        link.classList.toggle(
+            "active",
+            target === `#${currentSection}`
+        );
 
     });
+
+}
+
+window.addEventListener("scroll", updateActiveLink, {
+    passive: true
+});
+
+updateActiveLink();
+
+
+// =====================================
+// 5. CLOSE MENU ON RESIZE
+// =====================================
+
+window.addEventListener("resize", () => {
+
+    if (window.innerWidth > 780) {
+
+        closeMenu();
+
+    }
 
 });
 
 
-// ==============================
-// NAVBAR SCROLL EFFECT
-// ==============================
+// =====================================
+// 6. SMOOTH ANCHOR NAVIGATION
+// =====================================
 
-const navbar = document.querySelector(".navbar");
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
-window.addEventListener("scroll", () => {
+    anchor.addEventListener("click", (event) => {
 
-    if (window.scrollY > 50) {
+        const targetId = anchor.getAttribute("href");
 
-        navbar.style.padding = "14px 8%";
+        const targetElement = document.querySelector(targetId);
 
-    } else {
+        if (targetElement) {
 
-        navbar.style.padding = "20px 8%";
+            event.preventDefault();
 
-    }
+            targetElement.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+
+        }
+
+    });
 
 });
 ```
