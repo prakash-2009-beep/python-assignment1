@@ -1,584 +1,470 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laxmi Prakashh | Portfolio</title>
 
-    <meta name="description" content="Laxmi Prakashh's personal developer portfolio.">
+    <link rel="stylesheet" href="style.css">
 
-    <title>LP. | Laxmi Prakashh</title>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@1,500;1,600;1,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- JavaScript -->
-    <script src="script.js" defer></script>
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
 
-    <header class="navbar">
-
-        <a href="#home" class="brand">
-            <span class="brand-mark">LP.</span>
-            <span class="brand-divider"></span>
-            <span class="brand-name">Laxmi Prakashh</span>
+        <a href="#home" class="logo">
+            <span class="logo-mark">LP.</span>
+            <span class="logo-name">Laxmi Prakashh</span>
         </a>
 
-        <nav class="nav-links" id="nav-links">
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
 
+        <nav class="nav-links" id="nav-links">
             <a href="#home" class="nav-link active">Home</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#skills" class="nav-link">Skills</a>
             <a href="#projects" class="nav-link">Projects</a>
             <a href="#achievements" class="nav-link">Achievements</a>
             <a href="#contact" class="nav-link">Contact</a>
-
         </nav>
-
-        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation menu" aria-expanded="false">
-            <i class="fas fa-bars"></i>
-        </button>
 
     </header>
 
 
-    <main>
+    <!-- HOME -->
+    <section class="hero section" id="home">
 
-        <!-- HERO -->
+        <div class="hero-content reveal">
 
-        <section class="hero" id="home">
-
-            <div class="hero-container">
-
-                <div class="hero-text reveal">
-
-                    <div class="availability">
-                        <span class="availability-dot"></span>
-                        TECHNOLOGY ENTHUSIAST
-                    </div>
-
-                    <p class="hero-greeting">HELLO, WORLD!</p>
-
-                    <h1>
-                        I'm <span>Laxmi<br>Prakashh.</span>
-                    </h1>
-
-                    <h2>Exploring Technology, Building Possibilities.</h2>
-
-                    <p class="hero-description">
-                        A first-year B.Tech student at Joy University × NIAT,
-                        passionate about programming, Artificial Intelligence
-                        and discovering how technology shapes the future.
-                    </p>
-
-                    <div class="hero-actions">
-
-                        <a href="#projects" class="button button-primary">
-                            Explore Projects
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-
-                        <a href="https://github.com/prakash-2009-beep"
-                           target="_blank" rel="noopener noreferrer"
-                           class="button button-outline">
-
-                            <i class="fab fa-github"></i>
-                            GitHub
-
-                        </a>
-
-                    </div>
-
-                    <div class="hero-stats">
-
-                        <div>
-                            <strong>01</strong>
-                            <span>YEAR</span>
-                        </div>
-
-                        <div>
-                            <strong>B.Tech</strong>
-                            <span>EDUCATION</span>
-                        </div>
-
-                        <div>
-                            <strong>NIAT</strong>
-                            <span>LEARNING</span>
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <!-- HERO GRAPHIC -->
-
-                <div class="hero-art reveal">
-
-                    <div class="orbit orbit-one"></div>
-                    <div class="orbit orbit-two"></div>
-
-                    <div class="hero-circle">
-
-                        <div class="hero-circle-inner">
-                            <i class="fas fa-code"></i>
-                        </div>
-
-                    </div>
-
-                    <div class="tech-float python-float">
-                        <i class="fab fa-python"></i>
-                        <span>Python</span>
-                    </div>
-
-                    <div class="tech-float ai-float">
-                        <i class="fas fa-brain"></i>
-                        <span>AI</span>
-                    </div>
-
-                    <div class="tech-float iot-float">
-                        <i class="fas fa-microchip"></i>
-                        <span>IoT</span>
-                    </div>
-
-                    <div class="art-caption">
-                        <span>01 / 06</span>
-                        <p>Curiosity creates possibilities.</p>
-                    </div>
-
-                </div>
-
-            </div>
-
-            <a href="#about" class="scroll-down">
-                SCROLL TO EXPLORE
-                <i class="fas fa-arrow-down"></i>
-            </a>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section class="section about-section" id="about">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">01 / ABOUT ME</span>
-
-                <h2>Beyond the <em>code.</em></h2>
-
-                <p>Getting to know the person behind the projects.</p>
-
-            </div>
-
-
-            <div class="about-layout">
-
-                <div class="about-intro reveal">
-
-                    <div class="about-symbol">
-                        <i class="fas fa-user-astronaut"></i>
-                    </div>
-
-                    <span class="small-label">A LITTLE ABOUT ME</span>
-
-                    <h3>Curious mind.<br>Growing developer.</h3>
-
-                    <p>
-                        I'm Laxmi Prakashh, a first-year B.Tech student
-                        at Joy University × NIAT. I enjoy exploring
-                        technology and discovering how ideas can be
-                        transformed into practical digital solutions.
-                    </p>
-
-                    <p>
-                        My current learning journey includes Python,
-                        web development, AI workflows, prompting
-                        techniques and the fundamentals of IoT.
-                    </p>
-
-                </div>
-
-
-                <div class="about-information reveal">
-
-                    <div class="info-item">
-
-                        <div class="info-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-
-                        <div>
-                            <h4>Education</h4>
-                            <p>B.Tech · First Year</p>
-                            <span>Joy University × NIAT</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <div class="info-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-
-                        <div>
-                            <h4>Interests</h4>
-                            <p>Artificial Intelligence, IoT and Web Development</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <div class="info-icon">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-
-                        <div>
-                            <h4>Learning Goals</h4>
-                            <p>Programming, problem-solving and technical exploration</p>
-                        </div>
-
-                    </div>
-
-
-                    <div class="info-item">
-
-                        <div class="info-icon">
-                            <i class="fas fa-rocket"></i>
-                        </div>
-
-                        <div>
-                            <h4>Career Aspirations</h4>
-                            <p>Developing innovative technology solutions</p>
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- SKILLS -->
-
-        <section class="section skills-section" id="skills">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">02 / MY SKILLS</span>
-
-                <h2>Learning one step <em>at a time.</em></h2>
-
-                <p>Technologies and concepts I'm currently exploring.</p>
-
-            </div>
-
-
-            <div class="skills-grid">
-
-                <div class="skill-card reveal">
-                    <i class="fab fa-python"></i>
-                    <h3>Python</h3>
-                    <p>Programming Fundamentals</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <i class="fab fa-html5"></i>
-                    <h3>HTML5</h3>
-                    <p>Web Structure</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <i class="fab fa-css3-alt"></i>
-                    <h3>CSS3</h3>
-                    <p>Web Styling</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <i class="fab fa-github"></i>
-                    <h3>GitHub</h3>
-                    <p>Code Hosting</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <i class="fas fa-brain"></i>
-                    <h3>Artificial Intelligence</h3>
-                    <p>AI Fundamentals & Prompting</p>
-                </div>
-
-                <div class="skill-card reveal">
-                    <i class="fas fa-microchip"></i>
-                    <h3>Internet of Things</h3>
-                    <p>IoT Fundamentals</p>
-                </div>
-
-            </div>
-
-
-            <div class="learning-banner reveal">
-
-                <i class="fas fa-compass"></i>
-
-                <p>
-                    Always exploring, always learning.
-                    Every new concept is another step forward.
-                </p>
-
-            </div>
-
-        </section>
-
-
-        <!-- PROJECTS -->
-
-        <section class="section projects-section" id="projects">
-
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">03 / MY PROJECTS</span>
-
-                <h2>Ideas into <em>reality.</em></h2>
-
-                <p>A look at my work and practical learning experiences.</p>
-
-            </div>
-
-
-            <div class="projects-grid">
-
-                <article class="project-card reveal">
-
-                    <div class="project-header">
-                        <span>PROJECT 01</span>
-                        <i class="fab fa-python"></i>
-                    </div>
-
-                    <div class="project-illustration">
-                        <i class="fas fa-terminal"></i>
-                    </div>
-
-                    <h3>Python Practice Projects</h3>
-
-                    <p>
-                        A collection of beginner-level Python programs
-                        created to practise programming fundamentals,
-                        logical thinking and problem-solving.
-                    </p>
-
-                    <div class="tags">
-                        <span>Python</span>
-                        <span>Programming</span>
-                        <span>Logic</span>
-                    </div>
-
-                    <a href="https://github.com/prakash-2009-beep"
-                       target="_blank" rel="noopener noreferrer"
-                       class="project-link">
-
-                        View GitHub
-                        <i class="fas fa-arrow-up-right-from-square"></i>
-
-                    </a>
-
-                </article>
-
-
-                <article class="project-card project-featured reveal">
-
-                    <div class="project-header">
-                        <span>PROJECT 02</span>
-                        <i class="fas fa-globe"></i>
-                    </div>
-
-                    <div class="project-illustration">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-
-                    <h3>Personal Portfolio Website</h3>
-
-                    <p>
-                        A responsive personal website designed to
-                        present academic details, technical skills,
-                        projects and achievements using web technologies.
-                    </p>
-
-                    <div class="tags">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>Web Design</span>
-                    </div>
-
-                    <a href="https://github.com/prakash-2009-beep"
-                       target="_blank" rel="noopener noreferrer"
-                       class="project-link">
-
-                        View GitHub
-                        <i class="fas fa-arrow-up-right-from-square"></i>
-
-                    </a>
-
-                </article>
-
-            </div>
-
-            <p class="project-note reveal">
-                These projects represent my current learning journey.
+            <p class="eyebrow">
+                <span class="status-dot"></span>
+                B.TECH STUDENT | AI & TECHNOLOGY
             </p>
 
-        </section>
+            <h1>
+                Hello, I'm <br>
+                <span class="highlight">Laxmi Prakashh.</span>
+            </h1>
 
+            <h2>
+                Exploring technology,
+                <span class="italic-text">one idea at a time.</span>
+            </h2>
 
-        <!-- ACHIEVEMENTS -->
+            <p class="hero-description">
+                A first-year B.Tech student passionate about programming,
+                artificial intelligence, and discovering how technology
+                can turn ideas into meaningful solutions.
+            </p>
 
-        <section class="section achievements-section" id="achievements">
+            <div class="hero-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    Explore My Work <i class="fas fa-arrow-right"></i>
+                </a>
 
-            <div class="section-heading reveal">
-
-                <span class="eyebrow">04 / ACHIEVEMENTS</span>
-
-                <h2>Learning beyond the <em>classroom.</em></h2>
-
-                <p>Experiences that contribute to my technical growth.</p>
-
+                <a href="#contact" class="btn btn-outline">
+                    Let's Connect
+                </a>
             </div>
 
-
-            <div class="timeline">
-
-                <article class="timeline-item reveal">
-
-                    <div class="timeline-marker">
-                        <i class="fas fa-brain"></i>
-                    </div>
-
-                    <div class="timeline-card">
-
-                        <span>WORKSHOP PARTICIPATION</span>
-
-                        <h3>AI Workflows Workshop</h3>
-
-                        <p>
-                            Participated in a workshop exploring AI
-                            workflows, prompting techniques and the
-                            practical applications of artificial intelligence.
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="timeline-item reveal">
-
-                    <div class="timeline-marker">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-
-                    <div class="timeline-card">
-
-                        <span>WORKSHOP PARTICIPATION</span>
-
-                        <h3>IoT Workshop</h3>
-
-                        <p>
-                            Participated in an IoT workshop to gain
-                            exposure to connected technologies and the
-                            fundamentals of the Internet of Things.
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
-
-
-        <!-- CONTACT -->
-
-        <section class="contact-section" id="contact">
-
-            <div class="contact-container reveal">
-
-                <span class="eyebrow">05 / CONTACT</span>
-
-                <h2>
-                    Have an idea?<br>
-                    <em>Let's connect.</em>
-                </h2>
-
-                <p>
-                    Interested in technology, creative ideas and
-                    collaboration? I'd be happy to connect.
-                </p>
+            <div class="social-links">
+                <a href="https://github.com/prakash-2009-beep"
+                    target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
 
                 <a href="mailto:email-prakashh0315@gmail.com"
-                   class="contact-link">
-
+                    aria-label="Email">
                     <i class="fas fa-envelope"></i>
-                    email-prakashh0315@gmail.com
-
                 </a>
+            </div>
 
+        </div>
+
+        <div class="hero-visual reveal">
+
+            <div class="visual-card">
+
+                <div class="visual-top">
+                    <span>01 / INTRODUCTION</span>
+                    <i class="fas fa-code"></i>
+                </div>
+
+                <div class="visual-center">
+                    <div class="circle-design">
+                        <span>LP.</span>
+                    </div>
+
+                    <h3>Curious mind.</h3>
+                    <p>Creative thinking. Continuous learning.</p>
+                </div>
+
+                <div class="visual-bottom">
+                    <span>PYTHON</span>
+                    <span>AI / ML</span>
+                    <span>WEB DEV</span>
+                </div>
+
+            </div>
+
+            <div class="floating-tag tag-one">
+                <i class="fab fa-python"></i> Python
+            </div>
+
+            <div class="floating-tag tag-two">
+                <i class="fas fa-brain"></i> AI Explorer
+            </div>
+
+        </div>
+
+        <a href="#about" class="scroll-indicator">
+            <span>SCROLL TO EXPLORE</span>
+            <i class="fas fa-arrow-down"></i>
+        </a>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+
+        <div class="section-heading reveal">
+            <p class="section-label">01 / GET TO KNOW ME</p>
+            <h2>A little <span class="italic-text">about me.</span></h2>
+        </div>
+
+        <div class="about-grid">
+
+            <div class="about-text reveal">
+
+                <p class="large-text">
+                    I'm a technology enthusiast who enjoys learning,
+                    experimenting, and building new things.
+                </p>
+
+                <p>
+                    Currently pursuing my first year of B.Tech at
+                    <strong>Joy University × NIAT</strong>, I'm developing
+                    my foundation in programming and exploring the
+                    possibilities of artificial intelligence.
+                </p>
+
+                <p>
+                    From writing Python programs to understanding
+                    web development and experimenting with AI prompting,
+                    I enjoy discovering how different technologies work
+                    together.
+                </p>
+
+                <p>
+                    My goal is to keep learning, improve my problem-solving
+                    abilities, and gradually turn my knowledge into
+                    practical projects.
+                </p>
+
+            </div>
+
+            <div class="about-details reveal">
+
+                <div class="detail-card">
+                    <span class="detail-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </span>
+                    <div>
+                        <h3>Education</h3>
+                        <p>B.Tech · First Year</p>
+                        <small>Joy University × NIAT</small>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </span>
+                    <div>
+                        <h3>Currently Learning</h3>
+                        <p>Python & Web Development</p>
+                        <small>Building strong fundamentals</small>
+                    </div>
+                </div>
+
+                <div class="detail-card">
+                    <span class="detail-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </span>
+                    <div>
+                        <h3>Interests</h3>
+                        <p>Artificial Intelligence & IoT</p>
+                        <small>Exploring emerging technologies</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section class="section skills-section" id="skills">
+
+        <div class="section-heading reveal">
+            <p class="section-label">02 / WHAT I WORK WITH</p>
+            <h2>My technical <span class="italic-text">toolkit.</span></h2>
+            <p class="section-subtitle">
+                A growing collection of skills and technologies
+                I'm exploring along the way.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <div class="skill-card reveal">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Programming fundamentals and problem solving.</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Building the structure of web pages.</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Styling and designing responsive interfaces.</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fas fa-brain"></i>
+                <h3>AI & Prompting</h3>
+                <p>Exploring AI tools and prompting techniques.</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fas fa-microchip"></i>
+                <h3>IoT Basics</h3>
+                <p>Understanding connected devices and IoT concepts.</p>
+            </div>
+
+            <div class="skill-card reveal">
+                <i class="fas fa-code"></i>
+                <h3>Problem Solving</h3>
+                <p>Developing logical thinking through practice.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section class="section projects-section" id="projects">
+
+        <div class="section-heading reveal">
+            <p class="section-label">03 / THINGS I'VE BUILT</p>
+            <h2>Learning through <span class="italic-text">projects.</span></h2>
+            <p class="section-subtitle">
+                Small steps, practical experiments, and ideas
+                taking their first shape.
+            </p>
+        </div>
+
+        <div class="projects-grid">
+
+            <article class="project-card reveal">
+
+                <div class="project-number">PROJECT / 01</div>
+
+                <div class="project-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+
+                <h3>Python Practice Projects</h3>
+
+                <p>
+                    A collection of beginner-level Python programs
+                    created to understand programming concepts,
+                    logic building, and problem-solving.
+                </p>
+
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Programming</span>
+                    <span>Logic</span>
+                </div>
 
                 <a href="https://github.com/prakash-2009-beep"
-                   target="_blank" rel="noopener noreferrer"
-                   class="contact-link">
+                    target="_blank" class="project-link">
+                    View on GitHub <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
 
+            </article>
+
+
+            <article class="project-card featured-project reveal">
+
+                <div class="project-number">PROJECT / 02</div>
+
+                <div class="project-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+
+                <h3>Personal Portfolio Website</h3>
+
+                <p>
+                    A personal website designed to showcase my
+                    educational background, technical skills,
+                    projects, and learning journey.
+                </p>
+
+                <div class="project-tags">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+                </div>
+
+                <a href="#home" class="project-link">
+                    Explore Portfolio <i class="fas fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACHIEVEMENTS -->
+    <section class="section achievements-section" id="achievements">
+
+        <div class="section-heading reveal">
+            <p class="section-label">04 / LEARNING MILESTONES</p>
+            <h2>Experiences that <span class="italic-text">inspire.</span></h2>
+        </div>
+
+        <div class="achievement-list">
+
+            <div class="achievement-card reveal">
+
+                <div class="achievement-icon">
+                    <i class="fas fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div class="achievement-content">
+                    <span class="achievement-type">WORKSHOP</span>
+                    <h3>AI Workflows Workshop</h3>
+                    <p>
+                        Participated in a workshop exploring AI workflows
+                        and the practical use of artificial intelligence tools.
+                    </p>
+                </div>
+
+                <span class="achievement-arrow">
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </span>
+
+            </div>
+
+
+            <div class="achievement-card reveal">
+
+                <div class="achievement-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+
+                <div class="achievement-content">
+                    <span class="achievement-type">WORKSHOP</span>
+                    <h3>IoT Workshop</h3>
+                    <p>
+                        Explored the fundamentals of the Internet of Things
+                        and how connected technologies work.
+                    </p>
+                </div>
+
+                <span class="achievement-arrow">
+                    <i class="fas fa-arrow-up-right-from-square"></i>
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+
+        <div class="contact-container reveal">
+
+            <p class="section-label">05 / GET IN TOUCH</p>
+
+            <h2>
+                Have an idea?
+                <span class="italic-text">Let's create something.</span>
+            </h2>
+
+            <p class="contact-description">
+                I'm always interested in learning, collaborating,
+                and connecting with people who enjoy exploring technology.
+            </p>
+
+            <a href="mailto:email-prakashh0315@gmail.com"
+                class="btn btn-primary contact-button">
+                Get In Touch <i class="fas fa-paper-plane"></i>
+            </a>
+
+            <div class="contact-details">
+
+                <a href="mailto:email-prakashh0315@gmail.com">
+                    <i class="fas fa-envelope"></i>
+                    email-prakashh0315@gmail.com
+                </a>
+
+                <a href="https://github.com/prakash-2009-beep"
+                    target="_blank">
                     <i class="fab fa-github"></i>
-                    github.com/prakash-2009-beep
-
+                    GitHub Profile
                 </a>
 
             </div>
 
-            <div class="contact-watermark">LP.</div>
+        </div>
 
-        </section>
-
-    </main>
+    </section>
 
 
     <!-- FOOTER -->
-
     <footer class="footer">
 
         <a href="#home" class="footer-logo">LP.</a>
 
-        <p>Designed with curiosity. Built with code.</p>
+        <p>Designed & developed by Laxmi Prakashh.</p>
 
-        <p>© 2026 Laxmi Prakashh</p>
-
-        <a href="#home" class="back-top">
-            Back to top <i class="fas fa-arrow-up"></i>
-        </a>
+        <p class="copyright">
+            © <span id="year"></span> All rights reserved.
+        </p>
 
     </footer>
 
 
+    <script src="script.js"></script>
+
 </body>
 </html>
-```
