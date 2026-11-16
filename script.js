@@ -6,6 +6,7 @@
 const revealElements = document.querySelectorAll(".reveal");
 
 const observer = new IntersectionObserver(
+
     (entries) => {
 
         entries.forEach((entry) => {
@@ -21,13 +22,17 @@ const observer = new IntersectionObserver(
         });
 
     },
+
     {
         threshold: 0.15
     }
+
 );
 
 revealElements.forEach((element) => {
+
     observer.observe(element);
+
 });
 
 
@@ -58,7 +63,7 @@ menuBtn.addEventListener("click", () => {
 });
 
 
-// Close mobile menu after clicking a link
+// CLOSE MENU AFTER CLICKING A LINK
 
 const navLinks = document.querySelectorAll("#nav-menu a");
 
